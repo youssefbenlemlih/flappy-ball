@@ -1,6 +1,6 @@
 # FlappyBird
 
-A browser implementation of the famous game flappy burd.
+A browser implementation of the famous game flappy bird.
 
 ## Preview
 
