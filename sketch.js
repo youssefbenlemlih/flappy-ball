@@ -13,15 +13,10 @@ function setup() {
   frameRate(40);
   score =0 ;
   bird = new Bird();
-  bird.Bird();
 
   wall = new Wall();
   wall2 = new Wall();
   wall3 = new Wall();
-
-  wall.Wall();
-  wall2.Wall();
-  wall3.Wall();
 
   wall2.resetPosition(1.5);
   wall3.resetPosition(2);
@@ -31,16 +26,10 @@ function draw() {
   background(0);
   fill(99,29,88);
   bird.show();
-  bird.fall();
 
   wall.show();
-  wall.move();
-
   wall2.show();
-  wall2.move();
-
   wall3.show();
-  wall3.move();
 
   updateScore();
   if (wall.isOut){
@@ -64,7 +53,7 @@ function draw() {
   if (bird.touchesWall || bird.touchesSide){
     gameOver = true
   }
-  if (gameOver ){
+  if (gameOver){
     bird.pause();
     wall.pause();
     wall2.pause();
@@ -79,19 +68,17 @@ function draw() {
 }
 
 function keyPressed() {
-  if(keyCode ===UP_ARROW){
-    if (!bird.isPaused) {
-      bird.jump();
-    }
-    else {}
+  if (!bird.isPaused) {
+    bird.jump();
   }
-  mouseClicked();
+  if(gameOver){
+    setup();
+    gameOver = false;
+  }
 }
 
 function mouseClicked(){
-  if(gameOver ){
-    setup();gameOver = false;
-  }
+  keyPressed();
 }
 
 function updateScore(){
@@ -99,5 +86,3 @@ function updateScore(){
   fill(255,255,255);
   text(score,canvasWidth-50, 50);
 }
-
-
