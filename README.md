@@ -1,6 +1,6 @@
 # FlappyBird
 
-A browser implementation of the famous game flappy bird, [Try it out here!](https://youssefbenlemlih.github.io/flappy-birf/)
+A browser implementation of the famous game flappy bird, [Try it out here!](https://youssefbenlemlih.github.io/flappy-bird/)
 
 ## Preview
 
